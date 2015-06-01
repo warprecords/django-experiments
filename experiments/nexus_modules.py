@@ -153,7 +153,7 @@ def json_result(func):
                 import traceback
                 traceback.print_exc()
             raise
-        return HttpResponse(json.dumps(response), mimetype="application/json")
+        return HttpResponse(json.dumps(response), content_type="application/json")
     wrapper = wraps(func)(wrapper)
     return wrapper
 
